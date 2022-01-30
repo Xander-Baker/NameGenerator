@@ -120,6 +120,31 @@ string dwarfName(){
 
 }
 
+string lizardName(){
+
+  string word = getWordCaps("Lizard/word.txt"); 
+  word = word + getWord("Lizard/word.txt");
+  word = word + " ";
+  int number = rand() % 6;
+  if (number == 5){
+    word = word + "von ";
+  }
+  word = word + getWordCaps("Lizard/word.txt");
+  word = word + getWord("Lizard/suffix.txt");
+
+  return word;
+
+}
+
+string goblinName(){
+
+  string word = getWordCaps("Goblin/prefix.txt"); 
+  word = word + getWord("Goblin/suffix.txt");
+
+  return word;
+
+}
+
 string randomName(){
 
   string name;
@@ -171,7 +196,6 @@ string randomRaceName(){
   }
 
   return name;
-
 }
 
 string senGen(){
@@ -179,6 +203,36 @@ string senGen(){
   string weaponType = getWordRaw("weaponType.txt");
   sentence = randomRaceName() + " " + getWord("action/attack" + weaponType) + " " + randomRaceName() + " with their " + getWord("item/weapon" + weaponType);
   return sentence;
+  
+}
+
+string getName(string input){
+  string name;
+  if(input == "Elf"){
+    name = elfName();
+  }
+
+  if(input == "Orc"){
+    name = orcName();
+  }
+
+  if(input == "Dwarf"){
+    name = dwarfName();
+  }
+
+  if(input == "Human Male"){
+    name = humanMaleName();
+  }
+
+  if(input == "Human Female"){
+    name = humanFemaleName();
+  }
+
+  if(input == "Random"){
+    name = randomName();
+  }
+
+  return name;
 }
 
 
@@ -193,14 +247,16 @@ int main (){
   cout<<"(4) Random"<<endl;
   cout<<"(5) Human Male"<<endl;
   cout<<"(6) Human Female"<<endl;
-  cout<<"(7) Sentence"<<endl;
+  cout<<"(7) Lizard"<<endl;
+  cout<<"(8) Goblin"<<endl;
+  cout<<"(9) Sentence"<<endl;
   cin >> choice;
 
   switch (choice){
     case 1:
       system("CLS");
       while(1){
-      cout << elfName() <<endl;
+      cout << getName("Elf") <<endl;
       _getwch();
       }
 
@@ -240,6 +296,20 @@ int main (){
       }
 
     case 7:
+      system("CLS");
+      while(1){
+      cout << lizardName() <<endl;
+      _getwch();
+      }
+
+    case 8:
+      system("CLS");
+      while(1){
+      cout << goblinName() <<endl;
+      _getwch();
+      }
+
+    case 9:
       system("CLS");
       while(1){
       cout << senGen() <<endl;

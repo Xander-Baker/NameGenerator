@@ -13,3 +13,4 @@ sgil
 strond
 strom
 ter
+heim

@@ -5,3 +5,7 @@ Orc/word.txt
 Human/male.txt
 Human/female.txt
 Human/surname.txt
+Lizard/word.txt
+Lizard/suffix.txt
+Goblin/prefix.txt
+Goblin/suffix.txt
