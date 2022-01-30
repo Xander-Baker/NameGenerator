@@ -1,0 +1,2 @@
+_generic.txt
+_sharp.txt

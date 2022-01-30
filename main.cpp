@@ -140,6 +140,47 @@ string humanFemaleName(){
   return name;
 }
 
+string randomRaceName(){
+  srand(random_number());
+  string name;
+  int number = rand() % 6 + 1;
+  switch(number){
+    case 1:
+      name = elfName();
+      break;
+
+    case 2:
+      name = orcName();
+      break;
+
+    case 3:
+      name = dwarfName();
+      break;
+
+    case 4:
+      name = randomName();
+      break;
+
+    case 5:
+      name = humanMaleName();
+      break;
+
+    case 6:
+      name = humanFemaleName();
+      break;
+  }
+
+  return name;
+
+}
+
+string senGen(){
+  string sentence;
+  string weaponType = getWordRaw("weaponType.txt");
+  sentence = randomRaceName() + " " + getWord("action/attack" + weaponType) + " " + randomRaceName() + " with their " + getWord("item/weapon" + weaponType);
+  return sentence;
+}
+
 
 int main (){
 
@@ -152,6 +193,7 @@ int main (){
   cout<<"(4) Random"<<endl;
   cout<<"(5) Human Male"<<endl;
   cout<<"(6) Human Female"<<endl;
+  cout<<"(7) Sentence"<<endl;
   cin >> choice;
 
   switch (choice){
@@ -194,6 +236,14 @@ int main (){
       system("CLS");
       while(1){
       cout << humanFemaleName() <<endl;
+      _getwch();
+      }
+
+    case 7:
+      system("CLS");
+      while(1){
+      cout << senGen() <<endl;
+      cout<<""<<endl;
       _getwch();
       }
   }

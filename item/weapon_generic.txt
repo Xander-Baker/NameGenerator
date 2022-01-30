@@ -1,0 +1,8 @@
+vase
+candlestick
+club
+painting
+chair
+book
+trumpet
+rake

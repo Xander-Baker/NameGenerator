@@ -1,0 +1,4 @@
+sword
+dagger
+spear
+spike
