@@ -1,0 +1,7 @@
+Elf/words.txt
+Dwarf/word.txt
+Dwarf/suffix.txt
+Orc/word.txt
+Human/male.txt
+Human/female.txt
+Human/surname.txt
