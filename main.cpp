@@ -3,7 +3,7 @@
 #include <fstream>
 #include <time.h>
 #include <vector>
-#include <cstring>
+#include <cstring>  
 #include <string>
 #include <random>
 
@@ -145,6 +145,48 @@ string goblinName(){
 
 }
 
+string cowName(){
+
+  string word = getWordCaps("Cow/word.txt"); 
+  word = word + getWord("Cow/word.txt");
+
+  return word;
+
+}
+
+string cephName(){
+
+  string word = getWordCaps("Cephalopoid/word.txt"); 
+  word = word + getWord("Cephalopoid/word.txt");
+
+  return word;
+
+}
+
+string pigeonName(){
+
+  string word = getWordCaps("Pigeon/word.txt") + getWord("Pigeon/word.txt") + " " + getWordCaps("Pigeon/word.txt") + getWord("Pigeon/suffix.txt"); 
+
+  return word;
+
+}
+
+string gorillaName(){
+
+  string word = getWordCaps("Gorilla/word.txt")+ " " + getWord("Gorilla/word.txt") + " " + getWord("Gorilla/word.txt"); 
+
+  return word;
+
+}
+
+string catName(){
+
+  string word = getWordCaps("cat/prefix.txt") + getWord("cat/word.txt") + " " + getWordCaps("cat/word.txt") + getWord("cat/word.txt"); 
+
+  return word;
+
+}
+
 string randomName(){
 
   string name;
@@ -168,7 +210,7 @@ string humanFemaleName(){
 string randomRaceName(){
   srand(random_number());
   string name;
-  int number = rand() % 6 + 1;
+  int number = rand() % 13 + 1;
   switch(number){
     case 1:
       name = elfName();
@@ -193,6 +235,34 @@ string randomRaceName(){
     case 6:
       name = humanFemaleName();
       break;
+
+    case 7:
+      name = lizardName();
+      break;
+
+    case 8:
+      name = goblinName();
+      break;
+    
+    case 9:
+      name = gorillaName();
+      break;
+
+    case 10:
+      name = cephName();
+      break;
+
+    case 11:
+      name = pigeonName();
+      break;
+
+    case 12:
+      name = catName();
+      break;
+
+    case 13:
+      name = cowName();
+      break;
   }
 
   return name;
@@ -203,7 +273,7 @@ string senGen(){
   string weaponType = getWordRaw("weaponType.txt");
   sentence = randomRaceName() + " " + getWord("action/attack" + weaponType) + " " + randomRaceName() + " with their " + getWord("item/weapon" + weaponType);
   return sentence;
-  
+
 }
 
 string getName(string input){
@@ -249,7 +319,12 @@ int main (){
   cout<<"(6) Human Female"<<endl;
   cout<<"(7) Lizard"<<endl;
   cout<<"(8) Goblin"<<endl;
-  cout<<"(9) Sentence"<<endl;
+  cout<<"(9) Cow"<<endl;
+  cout<<"(10) Cephalopoid"<<endl;
+  cout<<"(11) Pigeon"<<endl;
+  cout<<"(12) Gorilla"<<endl;
+  cout<<"(13) cat"<<endl;
+  cout<<"(14) Sentence"<<endl;
   cin >> choice;
 
   switch (choice){
@@ -308,8 +383,43 @@ int main (){
       cout << goblinName() <<endl;
       _getwch();
       }
-
+    
     case 9:
+      system("CLS");
+      while(1){
+      cout << cowName() <<endl;
+      _getwch();
+      }
+
+    case 10:
+      system("CLS");
+      while(1){
+      cout << cephName() <<endl;
+      _getwch();
+      }
+
+    case 11:
+      system("CLS");
+      while(1){
+      cout << pigeonName() <<endl;
+      _getwch();
+      }
+
+    case 12:
+      system("CLS");
+      while(1){
+      cout << gorillaName() <<endl;
+      _getwch();
+      }
+
+    case 13:
+      system("CLS");
+      while(1){
+      cout << catName() <<endl;
+      _getwch();
+      }
+
+    case 14:
       system("CLS");
       while(1){
       cout << senGen() <<endl;

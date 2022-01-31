@@ -9,3 +9,9 @@ Lizard/word.txt
 Lizard/suffix.txt
 Goblin/prefix.txt
 Goblin/suffix.txt
+Gorilla/word.txt
+Italian/word.txt
+Cow/word.txt
+Pigeon/word.txt
+Pigeon/suffix.txt
+Cephalopoid/word.txt
